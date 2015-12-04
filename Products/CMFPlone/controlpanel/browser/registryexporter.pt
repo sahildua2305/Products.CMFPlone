@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en" lang="en"
+      metal:use-macro="context/prefs_main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:main fill-slot="prefs_configlet_main">
+
+    <a href="${string:$portal_url/@@overview-controlpanel}"
+       id="setup-link"
+       i18n:translate="">
+        Site Setup
+    </a>
+
+    <h1 class="documentFirstHeading"
+        i18n:translate=""
+        metal:define-slot="heading">
+        Registry Exporter
+    </h1>
+
+    <div class="documentDescription" i18n:translate="">
+        Export parts of the registry based on the Interface/Prefix
+    </div>
+
+    <div id="content-core">
+        <h2>Interfaces</h2>
+        <ul>
+            <li tal:repeat="prefix python:view.interfaces()"><a href="${python:prefix[1]}">${python:prefix[0]}</a></li>
+        </ul>
+
+        <h2>Prefixes</h2>
+        <ul>
+            <li tal:repeat="prefix python:view.prefixes()"><a href="${python:prefix[1]}">${python:prefix[0]}</a></li>
+        </ul>
+    </div>
+
+</metal:main>
+</body>
+</html>
