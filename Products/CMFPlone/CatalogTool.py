@@ -19,6 +19,7 @@ from DateTime import DateTime
 from OFS.interfaces import IOrderedContainer
 from Products.CMFCore.CatalogTool import CatalogTool as BaseTool
 from Products.CMFCore.CatalogTool import _mergedLocalRoles
+from Products.CMFCore.indexing import processQueue
 from Products.CMFCore.permissions import AccessInactivePortalContent
 from Products.CMFCore.utils import _checkPermission
 from Products.CMFCore.utils import _getAuthenticatedUser
@@ -363,6 +364,7 @@ class CatalogTool(PloneBaseTool, BaseTool):
 
     @security.private
     def getCounter(self):
+        processQueue()
         return self._counter is not None and self._counter() or 0
 
     @security.protected(SearchZCatalog)
@@ -376,6 +378,7 @@ class CatalogTool(PloneBaseTool, BaseTool):
         # effectiveRange checking entirely even for those without portal
         # wide AccessInactivePortalContent permission.
 
+        processQueue()
         kw = kw.copy()
         show_inactive = kw.get('show_inactive', False)
         if isinstance(REQUEST, dict) and not show_inactive:

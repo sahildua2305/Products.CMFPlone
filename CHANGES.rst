@@ -156,6 +156,11 @@ New features:
 
 - Update npm package depencies.
   [thet]
+- Process indexing operations prior to run searches against the catalog.
+  Part of PLIP 1343: https://github.com/plone/Products.CMFPlone/issues/1343
+  [gforcada]
+
+New:
 
 - Supported ``remove`` keyword for configlets in controlpanel.xml.  [maurits]
 
