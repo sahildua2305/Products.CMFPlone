@@ -677,6 +677,11 @@ def getQuality():
     return func()
 
 
+def getRetinaScales():
+    from plone.namedfile.utils import getRetinaScales as func
+    return func()
+
+
 def getSiteLogo(site=None):
     from Products.CMFPlone.interfaces import ISiteSchema
     from plone.formwidget.namedfile.converter import b64decode_file
