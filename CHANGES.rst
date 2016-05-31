@@ -34,6 +34,9 @@ New:
   Also clean up of parameters, better help and refactored parts of the code.
   [jensens]
 
+- Make filter control panel work with new version of safe HTML transform
+  [tomgross]
+
 Fixes:
 
 - Remove whitespaces in ``Products/CMFPlone/browser/templates/plone-frontpage.pt``.
