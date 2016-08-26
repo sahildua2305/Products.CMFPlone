@@ -40,6 +40,9 @@ Breaking changes:
     - ``returnNone.py`` with occurence refactored
     - ``reverseList.py`` with test
     - ``sort_modified_ascending.py``
+- add registry settings for thumb and icon handling  in tables, lists and portlets
+  https://github.com/plone/Products.CMFPlone/issues/1734 (PLIP) 
+  requires upgrade step (reapply profile)[fgrcon]
 
 New features:
 

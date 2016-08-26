@@ -1172,6 +1172,65 @@ class ISiteSchema(Interface):
                        _(u'For authenticated users only'))]),
         required=True)
 
+
+    no_thumbs_portlet =schema.Bool(
+        title=_(u'No Thumbs in portlets'),
+        description=_(u'Suppress thumbs in all portlets;'
+                      u' this default ca be overridden individually in selected portlets'),
+        default=False,
+        required=False)
+    
+    no_thumbs_lists =schema.Bool(
+        title=_(u'No thumbs in list views'),
+        description=_(u'Suppress thumbs in all list views; '
+		              u'this default can be overriden individually'),
+        default=False,
+        required=False) 
+
+    no_thumbs_summary = schema.Bool(
+        title=_(u'No thumbs in summary views'),
+        description=_(u'Suppress thumbs in all summary views; '
+		              u'this default can be overriden individually'),
+        default=False,
+        required=False)
+
+    no_thumbs_tables =schema.Bool(
+        title=_(u'No thumbs in table views'),
+        description=_(u'Suppress thumbs in all tableviews and in folder contents view; '
+		              u'this default can be overriden individually'),
+        default=False,
+        required=False) 
+
+    thumb_size_portlet = schema.Choice(
+        title=_(u'Thumb size for portlets'),
+        description=_(u'this default can be overriden individually'),
+        default=u'icon',
+        vocabulary = 'plone.app.vocabularies.ImagesScales',
+        required=True)
+
+    thumb_size_listing = schema.Choice(
+        title=_(u'Thumb size for listings '),
+        description=_(u'e.g. standard view;'
+                      u' this default can be overriden individually'),
+        default=u'thumb',
+        vocabulary = 'plone.app.vocabularies.ImagesScales',
+        required=True)
+
+    thumb_size_table = schema.Choice(
+        title=_(u'Thumb size for tables '),
+        description=_(u'e.g., tabular view, folder content listing;'
+                      u' this default can be overriden individually'),
+        default=u'tile',
+        vocabulary = 'plone.app.vocabularies.ImagesScales',
+        required=True)
+
+    thumb_size_summary = schema.Choice(
+        title=_(u'Thumb size for summary view  '),
+        description=_(u'this default can be overriden individually'),
+        default=u'mini',
+        vocabulary = 'plone.app.vocabularies.ImagesScales',
+        required=True)
+
     toolbar_position = schema.Choice(
         title=_(u'Toolbar position'),
         description=_(
