@@ -9,7 +9,11 @@ Changelog
 ------------------
 
 Breaking changes:
-
+- add registry settings for thumb and icon handling  in tables, lists and portlets
+  https://github.com/plone/Products.CMFPlone/issues/1734 (PLIP)
+  remove unused/dead code   
+  requires upgrade step (reapply profile for Site controla panel)[fgrcon]
+  
 - The related items widget has changed a lot.
   See the Mockup changelog for 2.4.0 here: https://github.com/plone/mockup/blob/master/CHANGES.rst
 
@@ -43,6 +47,7 @@ Breaking changes:
 - add registry settings for thumb and icon handling  in tables, lists and portlets
   https://github.com/plone/Products.CMFPlone/issues/1734 (PLIP) 
   requires upgrade step (reapply profile)[fgrcon]
+
 
 New features:
 
