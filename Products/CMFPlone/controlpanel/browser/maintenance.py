@@ -2,8 +2,8 @@
 from AccessControl import getSecurityManager
 from AccessControl.Permissions import view_management_screens
 from Acquisition import aq_inner
+from App.config import getConfiguration
 from cgi import escape
-from Globals import DevelopmentMode
 from Lifetime import shutdown
 from plone.autoform.form import AutoExtensibleForm
 from plone.memoize.view import memoize
@@ -125,7 +125,7 @@ class MaintenanceControlPanel(AutoExtensibleForm, form.EditForm):
         return False
 
     def isDevelopmentMode(self):
-        return bool(DevelopmentMode)
+        return bool(getConfiguration().debug_mode)
 
     def coreVersions(self):
         mt = getToolByName(self.context, 'portal_migration')
