@@ -16,7 +16,10 @@ from Testing.ZopeTestCase import ZopeDocFileSuite
 
 
 UNITTESTS = ['messages.txt', 'mails.txt', 'emaillogin.txt', 'translate.txt']
-CONTENT_TESTS = ['AddMoveAndDeleteDocument.txt', 'base_tag_not_present.txt']
+CONTENT_TESTS = [
+    'AddMoveAndDeleteDocument.txt',
+    'base_tag_not_present.txt',
+    'browser.txt']
 OPTIONFLAGS = (doctest.ELLIPSIS | doctest.NORMALIZE_WHITESPACE)
 
 from Products.GenericSetup import EXTENSION, profile_registry
