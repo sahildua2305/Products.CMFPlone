@@ -523,7 +523,6 @@ def webdav_enabled(obj, container):
 
 from App.Dialogs import MessageDialog
 from OFS.CopySupport import CopyError
-from OFS.CopySupport import eNotSupported
 from cgi import escape
 import sys
 
@@ -549,7 +548,7 @@ def _unrestricted_rename(container, id, new_id):
             action='manage_main'))
     ob = container._getOb(id)
     if not ob.cb_isMoveable():
-        raise CopyError(eNotSupported % escape(id))
+        raise CopyError('Not Supported {}'.format(escape(id)))
     try:
         ob._notifyOfCopyTo(container, op=1)
     except:
